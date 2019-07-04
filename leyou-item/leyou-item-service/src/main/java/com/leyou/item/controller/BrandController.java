@@ -1,7 +1,7 @@
 package com.leyou.item.controller;
 
-import com.leyou.common.pojo.Brand;
-import com.leyou.common.pojo.PageResult;
+import com.leyou.item.pojo.Brand;
+import com.leyou.item.pojo.PageResult;
 import com.leyou.item.service.BrandService;
 
 import org.springframework.beans.factory.annotation.Autowired;

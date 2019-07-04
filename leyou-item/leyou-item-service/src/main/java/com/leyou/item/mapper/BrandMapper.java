@@ -1,6 +1,6 @@
 package com.leyou.item.mapper;
 
-import com.leyou.common.pojo.Brand;
+import com.leyou.item.pojo.Brand;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

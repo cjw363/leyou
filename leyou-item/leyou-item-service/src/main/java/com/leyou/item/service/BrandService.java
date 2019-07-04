@@ -2,8 +2,8 @@ package com.leyou.item.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.leyou.common.pojo.Brand;
-import com.leyou.common.pojo.PageResult;
+import com.leyou.item.pojo.Brand;
+import com.leyou.item.pojo.PageResult;
 import com.leyou.item.mapper.BrandMapper;
 
 import org.apache.commons.lang.StringUtils;
