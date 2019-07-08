@@ -1,9 +1,9 @@
 package com.leyou.item.controller;
 
+import com.leyou.item.bo.SpuBo;
 import com.leyou.item.pojo.PageResult;
 import com.leyou.item.pojo.Sku;
 import com.leyou.item.pojo.SpuDetail;
-import com.leyou.item.pojo.com.leyou.item.bo.SpuBo;
 import com.leyou.item.service.GoodsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("goods")
 public class GoodsController {
 
     @Autowired

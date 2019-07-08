@@ -12,7 +12,7 @@ import com.leyou.item.pojo.Sku;
 import com.leyou.item.pojo.Spu;
 import com.leyou.item.pojo.SpuDetail;
 import com.leyou.item.pojo.Stock;
-import com.leyou.item.pojo.com.leyou.item.bo.SpuBo;
+import com.leyou.item.bo.SpuBo;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;

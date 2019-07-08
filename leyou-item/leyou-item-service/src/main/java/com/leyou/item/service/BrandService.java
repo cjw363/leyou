@@ -2,14 +2,15 @@ package com.leyou.item.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.leyou.item.mapper.BrandMapper;
 import com.leyou.item.pojo.Brand;
 import com.leyou.item.pojo.PageResult;
-import com.leyou.item.mapper.BrandMapper;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -78,5 +79,9 @@ public class BrandService {
     public List<Brand> queryBrandsByCid(Long cid) {
 
         return this.brandMapper.selectBrandByCid(cid);
+    }
+
+    public Brand queryBrandById(@PathVariable("id") Long id){
+        return this.brandMapper.selectByPrimaryKey(id);
     }
 }
