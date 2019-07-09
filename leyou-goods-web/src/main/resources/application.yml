@@ -1,14 +1,10 @@
 server:
-  port: 8083
+  port: 8084
 spring:
   application:
-    name: search-service
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 192.168.17.132:9300  #java客户端是9300 配置9200会出错
-  jackson:
-    default-property-inclusion: non_null # 配置json处理时忽略空值
+    name: goods-web
+  thymeleaf:
+    cache: false
 eureka:
   client:
     service-url:
