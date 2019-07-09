@@ -1,5 +1,6 @@
 package com.leyou.controller;
 
+import com.leyou.service.GoodsHtmlService;
 import com.leyou.service.GoodsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
+    @Autowired
+    private GoodsHtmlService goodsHtmlService;
     /**
      * 跳转到商品详情页
      * @param model
@@ -30,6 +33,9 @@ public class GoodsController {
         Map<String, Object> modelMap = this.goodsService.loadModel(id);
         // 放入模型
         model.addAllAttributes(modelMap);
+
+        // 页面静态化
+        this.goodsHtmlService.asyncExcute(id);
         return "item";
     }
 }
