@@ -20,3 +20,15 @@ zuul:
 ribbon:
   connectionTimeout: 1000 #连接超时间
   readTimeout: 1000
+leyou:
+  jwt:
+    pubKeyPath:  D:\upload\rsa\\rsa.pub # 公钥地址
+    cookieName: LY_TOKEN # cookie的名称
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
