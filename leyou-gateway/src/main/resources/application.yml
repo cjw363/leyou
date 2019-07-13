@@ -14,6 +14,9 @@ zuul:
     item-service: /item/** # 商品微服务的映射路径
     search-service: /search/**
     user-service: /user/**
+    auth-service: /auth/** # 授权中心微服务
+  add-host-header: true # 携带请求本身的head头信息
+  sensitive-headers:  # 配置禁止使用的头信息，这里设置为null,否则set-cookie无效
 ribbon:
   connectionTimeout: 1000 #连接超时间
   readTimeout: 1000
