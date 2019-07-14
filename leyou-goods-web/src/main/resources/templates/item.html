@@ -211,8 +211,8 @@
 								<div class="control-group">
 									<div class="controls">
 										<input autocomplete="off" type="text" v-model="num" disabled value="1" minnum="1" class="itxt"/>
-										<a href="javascript:void(0)" class="increment plus" @click="plus()">+</a>
-										<a href="javascript:void(0)" class="increment mins" @click="mins()">-</a>
+										<a href="javascript:void(0)" class="increment plus" @click="increment(cart)">+</a>
+										<a href="javascript:void(0)" class="increment mins" @click="decrement(cart)">-</a>
 									</div>
 								</div>
 							</div>
@@ -708,7 +708,30 @@
                 if (this.num > 1) {
                     this.num--;
                 }
-            }
+            },
+		        increment(c){
+                c.num++;
+                ly.verify().then(() => {
+                    // TODO 已登录，向后台发起请求
+		                ly.http.put("/cart",{skuId:c.skuId,num:c.num})
+                }).catch(() => {
+                    // 未登录，直接操作本地数据
+                    ly.store.set("LY_CART", this.c);
+                })
+		        },
+		        decrement(c){
+                if (c.num <= 1) {
+                    return;
+                }
+                c.num--;
+                ly.verify().then(() => {
+                    // TODO 已登录，向后台发起请求
+                    ly.http.put("/cart",{skuId:c.skuId,num:c.num})
+                }).catch(() => {
+                    // 未登录，直接操作本地数据
+                    ly.store.set("LY_CART", this.c);
+                })
+		        }
         }
     });
 </script>
