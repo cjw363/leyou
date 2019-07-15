@@ -39,4 +39,14 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 	</dependencies>
+
+	<!--多模块项目仅仅需要在启动类所在的模块添加打包插件即可！！不要在父类添加打包插件 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
